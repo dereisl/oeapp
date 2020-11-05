@@ -342,6 +342,11 @@
     filter: brightness(2);
   }
 
+  .comment-area textarea {
+    color: var(--fgMain) !important;
+    background-color: var(--bgPage);
+  }
+
   /* Quiz attempts table */
   #page-mod-quiz-view table.quizattemptsummary tr.bestrow td {
     background-color: var(--bgAlertInfo);
