@@ -351,6 +351,26 @@
     color: var(--fgMainHov);
   }
 
+  /* Checklist Progress Bar */
+  .checklist_progress_outer {
+    border-color: var(--bdMain);
+    box-shadow: none;
+  }
+
+  ol.checklist .itemblack {
+    color: var(--fgMain);
+  }
+
+  /* Checklist Progress Icon */
+  img[src='https://moodle.bulme.at/theme/image.php/classic/checklist/1604486711/icon'] {
+    filter: invert(1) hue-rotate(-180deg);
+  }
+
+  /* Course Progress Bar Indicator */
+  img.icon.nowicon[src='https://moodle.bulme.at/theme/image.php/classic/block_completion_progress/1604486711/right'] {
+    filter: invert(1);
+  }
+
   /* File Manager */
   .dndupload-arrow {
     background-image: url(http://samherbert.net/svg-loaders/svg-loaders/rings.svg);
