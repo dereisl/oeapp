@@ -539,6 +539,12 @@
   .preferences-container .preference-table tr td:nth-child(even) {
     background-color: var(--bgBlock);
   }
+
+  /* Grid box */
+  #gridshadebox_content {
+    border-color: var(--bgAlertDanger);
+    background-color: var(--bgPage);
+  }
 }
 
 @-moz-document url-prefix("https://moodle.bulme.at/lib/editor/tinymce/") {
