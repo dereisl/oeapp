@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme für Bulme Moodle
 @namespace      dereisl
 @author         dereisl
-@version        1.0.2
+@version        1.0.3
 @homepageURL    https://ö.app/bulme/dark-theme/
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -621,6 +621,10 @@
 
   div.editor_atto_toolbar button .icon {
     color: var(--fgMainHov);
+  }
+
+  .editor_atto_content_wrap {
+    background: none;
   }
 
   /* Marklar Text Editor */
