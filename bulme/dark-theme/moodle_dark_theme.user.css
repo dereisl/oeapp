@@ -502,6 +502,12 @@
     background-color: var(--bgBtn);
   }
 
+  .nav-tabs .nav-link.active {
+    border-bottom-color: transparent;
+    color: var(--fgMain);
+    background-color: var(--bgPage);
+  }
+
   /* Popover */
   .popover,
   .hover-tooltip-container .hover-tooltip {
@@ -552,7 +558,7 @@
     background-color: var(--bgCalendarEvUser);
   }
 
-  /* Standard Text Editor */
+  /* TinyMCE Text Editor */
   .moodleSkin td.mceToolbar,
   .moodleSkin td.mceStatusbar {
     background-color: var(--bgBlock);
@@ -593,6 +599,28 @@
 
   .mceIframeContainer > iframe#id_config_text_ifr {
     /*[[invertTextEditor]]*/filter: invert(1) contrast(0.8);
+  }
+
+  /* Atto Text Editor */
+  div.editor_atto_toolbar {
+    background-color: var(--bgBlock);
+  }
+
+  div.editor_atto_toolbar div.atto_group {
+    background-color: var(--bgPage);
+  }
+
+  .editor_atto_toolbar button:hover {
+    background: var(--bgBtn);
+  }
+
+  .editor_atto_toolbar button:active,
+  .editor_atto_toolbar button.highlight {
+    background: var(--bgBtnHov);
+  }
+
+  div.editor_atto_toolbar button .icon {
+    color: var(--fgMainHov);
   }
 
   /* Loading indicators */
