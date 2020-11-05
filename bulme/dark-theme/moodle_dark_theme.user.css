@@ -545,6 +545,19 @@
     border-color: var(--bgAlertDanger);
     background-color: var(--bgPage);
   }
+
+  /* Front page table */
+  #region-main td[style*='background-color: #d8def2;'] {
+    background-color: #31374b !important;
+  }
+
+  #region-main td[style*='background-color: #f5f5dc;'] {
+    background-color: #383824 !important;
+  }
+
+  #region-main td[style*='background-color: #daecda;'] {
+    background-color: #2b362b !important;
+  }
 }
 
 @-moz-document url-prefix("https://moodle.bulme.at/lib/editor/tinymce/") {
