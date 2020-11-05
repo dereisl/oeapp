@@ -329,6 +329,19 @@
     background-color: var(--bgSubmitted);
   }
 
+  /* Grading table */
+  .gradingform_rubric .criterion.even {
+    background-color: var(--bgPage);
+  }
+
+  .gradingform_rubric .criterion .levels .level.checked {
+    background-color: var(--bgGraded);
+  }
+
+  .gradingform_rubric .criterion .levels .level.checked .score {
+    filter: brightness(2);
+  }
+
   /* File Manager */
   .dndupload-arrow {
     background-image: url(http://samherbert.net/svg-loaders/svg-loaders/rings.svg);
