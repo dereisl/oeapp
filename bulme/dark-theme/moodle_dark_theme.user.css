@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme für Bulme Moodle
 @namespace      dereisl
 @author         dereisl
-@version        1.0.3
+@version        1.0.4
 @homepageURL    https://ö.app/bulme/dark-theme/
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -77,7 +77,6 @@
 
     --bgMessageSent: /*[[bgMessageSent]]*/;
   }
-
 
   /* Body */
   body {
@@ -262,7 +261,7 @@
     background-color: var(--bgBtn);
   }
 
-  #conversation-actions-menu {
+  .message-app .dropdown-menu  {
     color: var(--fgMain);
   }
 
@@ -291,7 +290,8 @@
   }
 
   /* Block ellipsis button */
-  .block .block-cards .btn.btn-link.btn-icon:hover {
+  .block .block-cards .btn.btn-link.btn-icon:hover,
+  .block .block-cards .btn.btn-link.btn-icon:focus {
     background-color: var(--bgBtn);
   }
 
