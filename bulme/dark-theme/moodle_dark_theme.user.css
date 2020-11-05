@@ -143,6 +143,7 @@
 
   .dropdown-item:hover,
   .dropdown-item:focus {
+    color: var(--fgMain);
     background-color: var(--bgBtn);
   }
 
