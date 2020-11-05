@@ -304,20 +304,29 @@
   .path-mod-assign td.submissionstatussubmitted,
   .path-mod-assign div.submissionstatussubmitted,
   .path-mod-assign a:link.submissionstatussubmitted {
+    color: var(--fgMain);
     background-color: var(--bgSubmitted);
   }
 
   /* Bewertungsstatus: nicht bewertet */
   .path-mod-assign td.submissionnotgraded,
   .path-mod-assign div.submissionnotgraded {
-    color: #fff;
+    color: var(--fgMain);
     background-color: var(--bgNotGraded);
   }
 
   /* Bewertungsstatus: Bewertet */
   .path-mod-assign td.submissiongraded,
   .path-mod-assign div.submissiongraded {
+    color: var(--fgMain);
     background-color: var(--bgGraded);
+  }
+
+  /* Verbleibende Zeit: Aufgabe wurde ... vor dem Abgabeende abgegeben */
+  .path-mod-assign td.earlysubmission,
+  .path-mod-assign div.earlysubmission {
+    color: var(--fgMain);
+    background-color: var(--bgSubmitted);
   }
 
   /* File Manager */
