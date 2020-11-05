@@ -121,12 +121,23 @@
     border-color: var(--bdMain);
   }
 
-  .dropdown-menu {
+  .yui3-button {
+    color: var(--fgMain);
+    background: var(--bgBtn);
+  }
+
+  .yui3-button:hover {
+    background: var(--bgBtnHov);
+  }
+
+  .dropdown-menu,
+  .form-autocomplete-suggestions {
     border-color: var(--bdMain);
     background-color: var(--bgPage);
   }
 
-  .dropdown-item {
+  .dropdown-item,
+  .form-autocomplete-suggestions li {
     color: var(--fgMain);
   }
 
@@ -376,6 +387,28 @@
     filter: invert(1);
   }
 
+  /* Pdf Feedback Viewer */
+  .path-mod-assign-feedback-pdf .yui3-button.menubutton:hover {
+    background-color: var(--bgBtnHov);
+  }
+
+  .path-mod-assign-feedback-pdf .dropmenu {
+    background-color: var(--bgPage);
+  }
+
+  .path-mod-assign-feedback-pdf .dropmenu li:hover {
+    background-color: var(--bgBtnHov);
+  }
+
+  .path-mod-assign-feedback-pdf .comment {
+    color: black;
+  }
+
+  #prevpage2, #nextpage2 {
+    color: var(--fgMain);
+    background-color: var(--bgBtn);
+  }
+
   /* File Manager */
   .dndupload-arrow {
     background-image: url(http://samherbert.net/svg-loaders/svg-loaders/rings.svg);
@@ -582,6 +615,15 @@
   /* Misc */
   /* Timeline */
   .block-timeline .list-group-item {
+    background-color: var(--bgBlock);
+  }
+
+  .block-timeline .list-group-item .list-group-item-action {
+    color: var(--fgMain);
+  }
+
+  .block-timeline .list-group-item .list-group-item-action:hover,
+  .block-timeline .list-group-item .list-group-item-action:focus {
     background-color: var(--bgPage);
   }
 
