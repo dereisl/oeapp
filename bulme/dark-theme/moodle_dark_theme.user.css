@@ -217,6 +217,22 @@
     border-bottom-color: var(--bgPage);
   }
 
+  .content-item-container.unread {
+    background-color: var(--bgBlock);
+  }
+
+  .content-item-container:hover, .content-item-container.unread:hover {
+    background-color: var(--bgBtnHov);
+  }
+
+  .content-item-container.selected {
+    background-color: var(--bgBtn);
+  }
+
+  .content-item-container .content-item-footer .timestamp {
+    color: var(--fgMainHov);
+  }
+
   /* Messages / Chat */
   .message-app.bg-light {
     background-color: var(--bgBlock) !important;
