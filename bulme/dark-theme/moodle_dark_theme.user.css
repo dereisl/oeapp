@@ -407,7 +407,8 @@
     color: var(--fgMainHov);
   }
 
-  .path-mod-workshop .submission-full .header {
+  .path-mod-workshop .submission-full .header,
+  .path-mod-workshop .assessment-full .header {
     background-color: var(--bgBlock);
   }
 
