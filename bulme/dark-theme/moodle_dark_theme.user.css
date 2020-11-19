@@ -640,7 +640,7 @@
     color: var(--fgMain) !important;
   }
 
-  .mceIframeContainer > iframe#id_config_text_ifr {
+  .mceIframeContainer > iframe {
     /*[[invertTextEditor]]*/filter: invert(1) contrast(0.8);
   }
 
@@ -675,7 +675,7 @@
     background-color: var(--bgBlock);
   }
 
-  .marklar-wrapper #id_config_text {
+  .marklar-wrapper > .marklar-textarea {
     background-color: var(--bgPage) !important;
   }
 
