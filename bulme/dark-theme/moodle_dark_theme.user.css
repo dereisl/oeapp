@@ -384,6 +384,33 @@
     color: var(--fgMainHov);
   }
 
+  /* Workshop (Peer-Assessment) Table */
+  .path-mod-workshop .userplan dd {
+    background-color: var(--bgBlock);
+  }
+
+  .path-mod-workshop .userplan,
+  .path-mod-workshop .userplan dd,
+  .path-mod-workshop .userplan dt {
+    border-color: var(--bdMain);
+  }
+
+  .path-mod-workshop .userplan dt.active,
+  .path-mod-workshop .userplan dd.active {
+    border-color: var(--bdMain);
+    color: var(--fgMain);
+    background-color: var(--bgGraded);
+  }
+
+  .path-mod-workshop .submission-summary .userdate,
+  .path-mod-workshop .submission-full .header .userdate {
+    color: var(--fgMainHov);
+  }
+
+  .path-mod-workshop .submission-full .header {
+    background-color: var(--bgBlock);
+  }
+
   /* Checklist Progress Bar */
   .checklist_progress_outer {
     border-color: var(--bdMain);
