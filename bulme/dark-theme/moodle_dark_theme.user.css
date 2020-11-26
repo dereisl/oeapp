@@ -412,6 +412,14 @@
     background-color: var(--bgBlock);
   }
 
+  .path-mod-workshop #workshop-viewlet-yourgrades .finalgrades .grade.submissiongrade {
+    background-color: var(--bgAlertInfo);
+  }
+
+  .path-mod-workshop #workshop-viewlet-yourgrades .finalgrades .grade.assessmentgrade {
+    background-color: var(--bgBtn);
+  }
+
   /* Checklist Progress Bar */
   .checklist_progress_outer {
     border-color: var(--bdMain);
