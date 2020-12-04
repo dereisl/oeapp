@@ -31,6 +31,10 @@
 @var color bgAlertInfo "Background: Info Alert" #577077
 @var color bgAlertDanger "Background: Danger Alert" #6d4747
 
+@var color bgQuizFormulation "Background: Quiz Formulation" #435256
+@var color bgQuizOutcome "Background: Quiz Outcome/Comment" #4b463d
+@var color bgQuizAnswerSpecificFeedback "Background: Quiz Answer Specific Feedback" #70694b
+
 @var color bgCalendarEvSite "Background: Calendar Site Event" #506c49
 @var color bgCalendarEvCategory "Background: Calendar Category Event" #6d4d6d
 @var color bgCalendarEvCourse "Background: Calendar Course Event" #6d4f40
@@ -68,6 +72,10 @@
 
     --bgAlertInfo: /*[[bgAlertInfo]]*/;
     --bgAlertDanger: /*[[bgAlertDanger]]*/;
+
+    --bgQuizFormulation: /*[[bgQuizFormulation]]*/;
+    --bgQuizOutcome: /*[[bgQuizOutcome]]*/;
+    --bgQuizAnswerSpecificFeedback: /*[[bgQuizAnswerSpecificFeedback]]*/;
 
     --bgCalendarEvSite: /*[[bgCalendarEvSite]]*/;
     --bgCalendarEvCategory: /*[[bgCalendarEvCategory]]*/;
@@ -173,6 +181,14 @@
   .form-control[readonly],
   .custom-select:disabled {
     background-color: var(--bgInpDis);
+  }
+
+  td.selected {
+    background-color: var(--bgAlertInfo);
+  }
+
+  input[type=radio][disabled] {
+    filter: invert(1) brightness(10);
   }
 
   /* Navbar */
@@ -375,15 +391,6 @@
     background-color: var(--bgPage);
   }
 
-  /* Quiz attempts table */
-  #page-mod-quiz-view table.quizattemptsummary tr.bestrow td {
-    background-color: var(--bgAlertInfo);
-  }
-
-  table.quizattemptsummary .noreviewmessage {
-    color: var(--fgMainHov);
-  }
-
   /* Workshop (Peer-Assessment) Table */
   .path-mod-workshop .userplan dd {
     background-color: var(--bgBlock);
@@ -420,18 +427,72 @@
     background-color: var(--bgBtn);
   }
 
-  /* Test */
+  /* Quizzes */
   .que .info {
     background-color: var(--bgBtn);
   }
 
   .que .formulation {
-    color: white;
-    background-color: var(--bgAlertInfo);
+    color: var(--fgMain);
+    background-color: var(--bgQuizFormulation);
   }
 
   .path-mod-quiz #mod_quiz_navblock .qnbutton {
     background-color: var(--bgPage);
+  }
+
+  .que.multichoice .answer .specificfeedback {
+    background-color: var(--bgQuizAnswerSpecificFeedback);
+  }
+
+  .que .outcome,
+  .que .comment {
+    color: var(--fgMain);
+    background-color: var(--bgQuizOutcome);
+  }
+
+  table.quizreviewsummary th.cell {
+    background-color: var(--bgBlock);
+  }
+
+  table.quizreviewsummary td.cell {
+    background-color: var(--bgPage);
+  }
+
+  /* Quiz attempts table */
+  #page-mod-quiz-view table.quizattemptsummary tr.bestrow td {
+    background-color: var(--bgAlertInfo);
+  }
+
+  table.quizattemptsummary .noreviewmessage {
+    color: var(--fgMainHov);
+  }
+
+  /* Questionaire */
+  .qn-info {
+    background-color: var(--bgBtn);
+  }
+
+  .qn-question,
+  #page-mod-questionnaire-complete .raterow:hover,
+  #page-mod-questionnaire-preview .raterow:hover {
+    background-color: var(--bgQuizFormulation);
+  }
+
+  #page-mod-questionnaire-complete .c0,
+  #page-mod-questionnaire-preview .c0,
+  #page-mod-questionnaire-print .c0,
+  #page-mod-questionnaire-report .individual .c0,
+  #page-mod-questionnaire-myreport .individual .c0 {
+    background-color: var(--bgPage);
+  }
+
+  #page-mod-questionnaire-complete .c1,
+  #page-mod-questionnaire-preview .c1,
+  #page-mod-questionnaire-print .c1,
+  #page-mod-questionnaire-report .individual .c1,
+  #page-mod-questionnaire-myreport .individual .c1 {
+    background-color: var(--bgBlock);
   }
 
   /* Checklist Progress Bar */
