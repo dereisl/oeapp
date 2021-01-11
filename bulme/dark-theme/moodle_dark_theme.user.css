@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme für Bulme Moodle
 @namespace      dereisl
 @author         dereisl
-@version        1.0.8
+@version        1.0.9
 @homepageURL    https://ö.app/bulme/dark-theme/
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -108,6 +108,10 @@
   a:hover,
   a:focus {
     color: var(--fgLinkHov);
+  }
+
+  pre {
+    color: var(--fgMain);
   }
 
   .btn-secondary,
