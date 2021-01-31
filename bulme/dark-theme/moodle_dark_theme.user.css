@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme für Bulme Moodle
 @namespace      dereisl
 @author         dereisl
-@version        1.0.9
+@version        1.0.10
 @homepageURL    https://ö.app/bulme/dark-theme/
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -316,8 +316,10 @@
     background-color: var(--bgCourseCard);
   }
 
-  /* Course card progress bar */
-  .card-footer.bg-white {
+  /* Course card, list and description progress bar */
+  .card-footer.bg-white,
+  #region-main .list-group-item .bg-white,
+  .block .block-cards .course-summaryitem .bg-white {
     background-color: var(--bgCourseCard) !important;
   }
 
@@ -331,15 +333,29 @@
     background-color: var(--bgBtn);
   }
 
-  /* Course Cards on Dashboard */
+  /* Course cards on dashboard */
   /* Darken generated covers */
-  .card-img.dashboard-card-img[style^='background-image: url("'] {
+  .card-img.dashboard-card-img[style^='background-image: url("'],
+  .block .block-cards .course-summaryitem .summaryimage.rounded-circle[style^='background-image: url("'] {
     filter: brightness(50%);
     transition: filter .2s;
   }
 
-  .card-img.dashboard-card-img[style^='background-image: url("']:hover {
+  .card-img.dashboard-card-img[style^='background-image: url("']:hover,
+  .block .block-cards .course-summaryitem .summaryimage.rounded-circle[style^='background-image: url("']:hover {
     filter: brightness(100%);
+  }
+
+  /* Course list on dashboard */
+  #region-main .list-group-item {
+    border-color: var(--bdMain);
+    background-color: var(--bgCourseCard);
+  }
+
+  /* Course descriptions on dashboard */
+  .block .block-cards .course-summaryitem {
+    border-color: var(--bdMain);
+    background-color: var(--bgCourseCard);
   }
 
   /* Course */
