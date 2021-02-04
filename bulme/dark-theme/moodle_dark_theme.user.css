@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme für Bulme Moodle
 @namespace      dereisl
 @author         dereisl
-@version        1.0.11
+@version        1.0.12
 @homepageURL    https://ö.app/bulme/dark-theme/
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -484,6 +484,12 @@
   }
 
   table.quizreviewsummary td.cell {
+    background-color: var(--bgPage);
+  }
+
+  /* Quiz Navigation */
+  .path-mod-quiz #mod_quiz_navblock .qnbutton.notyetanswered .trafficlight,
+  .path-mod-quiz #mod_quiz_navblock .qnbutton.invalidanswer .trafficlight {
     background-color: var(--bgPage);
   }
 
