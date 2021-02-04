@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme für Bulme Moodle
 @namespace      dereisl
 @author         dereisl
-@version        1.0.10
+@version        1.0.11
 @homepageURL    https://ö.app/bulme/dark-theme/
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -21,6 +21,7 @@
 @var color bgBtn "Button Background" #60656a
 @var color bgBtnHov "Button Hover Background" #4b5458
 @var color bgInpDis "Disabled Input Background" #4c4c4c
+@var color bgNavBar "Navigation Bar Background" #1b1b1b99
 
 @var color bdMain "Border Color" #ffffff55
 
@@ -63,6 +64,7 @@
     --bgBtn: /*[[bgBtn]]*/;
     --bgBtnHov: /*[[bgBtnHov]]*/;
     --bgInpDis: /*[[bgInpDis]]*/;
+    --bgNavBar: /*[[bgNavBar]]*/;
 
     --bdMain: /*[[bdMain]]*/;
 
@@ -197,6 +199,11 @@
 
   /* Navbar */
   .navbar-bootswatch {
+    transition: background-color .2s;
+    background-color: var(--bgNavBar);
+  }
+
+  .navbar-bootswatch:hover {
     background-color: var(--bgBlock);
   }
 
@@ -214,7 +221,8 @@
   .navbar-light .navbar-nav .nav-link:hover,
   .navbar-bootswatch .navbar-nav .nav-link:hover,
   .navbar-light .navbar-nav .nav-link:focus,
-  .navbar-bootswatch .navbar-nav .nav-link:focus {
+  .navbar-bootswatch .navbar-nav .nav-link:focus,
+  .navbar-bootswatch .navbar-nav .show > .nav-link {
     color: var(--fgMainHov);
   }
 
