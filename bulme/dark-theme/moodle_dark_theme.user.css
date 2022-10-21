@@ -1,10 +1,10 @@
 /* ==UserStyle==
-@name           Bulme Moodle Dark Theme
-@description    So gut wie vollständiges Dark Theme für Bulme Moodle
+@name           Bulme & TU Moodle Dark Theme
+@description    So gut wie vollständiges Dark Theme verschiende Moodle Instanzen
 @namespace      dereisl
 @author         dereisl
-@version        1.0.13
-@homepageURL    https://ö.app/bulme/dark-theme/
+@version        1.0.14
+@homepageURL    https://github.com/dereisl/oeapp/blob/master/bulme/dark-theme/moodle_dark_theme.user.css
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
 @preprocessor uso
@@ -12,14 +12,21 @@
 @var color fgMain "Main Text Color" #fff
 @var color fgMainHov "Main Text Hover Color" #aaa
 @var color fgLink "Link Colour" #7289da
-@var color fgLinkHov "Link Hover Color" #6279d0
+@var color fgLinkHov "Link Hover Color" #495ca1
 @var color fgLinkBright "Brighter Link Colour" #c7d3ff
+
+@var select fgIconOverrideColor "Override Icon Colour" {
+  "Enabled": "var(--fgIconOverrideColor)",
+  "Disabled": "unset"
+}
+@var color fgIconOverrideColorSelection "Override Icon Colour" #ffffff
 
 @var color bgPage "Page Background" #23272A
 @var color bgBlock "Block Background" #2C2F33
 @var color bgCourseCard "Course Card Background" #23272A
 @var color bgBtn "Button Background" #60656a
 @var color bgBtnHov "Button Hover Background" #4b5458
+@var color bgActive "Active Item Background" #1177d1
 @var color bgInpDis "Disabled Input Background" #4c4c4c
 @var color bgNavBar "Navigation Bar Background" #1b1b1b99
 
@@ -50,7 +57,8 @@
 }
 
 ==/UserStyle== */
-@-moz-document domain("moodle.bulme.at") {
+@-moz-document domain("moodle.bulme.at"),
+domain("tc.tugraz.at") {
   :root {
     --fgMain: /*[[fgMain]]*/;
     --fgMainHov: /*[[fgMainHov]]*/;
@@ -63,6 +71,7 @@
     --bgCourseCard: /*[[bgCourseCard]]*/;
     --bgBtn: /*[[bgBtn]]*/;
     --bgBtnHov: /*[[bgBtnHov]]*/;
+    --bgActive: /*[[bgActive]]*/;
     --bgInpDis: /*[[bgInpDis]]*/;
     --bgNavBar: /*[[bgNavBar]]*/;
 
@@ -86,6 +95,8 @@
     --bgCalendarEvUser: /*[[bgCalendarEvUser]]*/;
 
     --bgMessageSent: /*[[bgMessageSent]]*/;
+
+    --fgIconOverrideColor: /*[[fgIconOverrideColorSelection]]*/;
   }
 
   /* Body */
@@ -93,6 +104,7 @@
     color: var(--fgMain);
   }
 
+  html,
   body,
   #page-my-index {
     background-color: var(--bgPage);
@@ -103,12 +115,16 @@
     border-color: var(--bdMain) !important;
   }
 
-  a {
+  a,
+  /* 2nd theme */
+  a:visited {
     color: var(--fgLink);
   }
 
   a:hover,
-  a:focus {
+  a:focus,
+  /* 2nd theme */
+  a:not([class]):focus {
     color: var(--fgLinkHov);
   }
 
@@ -116,10 +132,20 @@
     color: var(--fgMain);
   }
 
+  /* Block ellipsis button */
+  .btn,
+  a.btn,
+  button {
+    background: none;
+    color: var(--fgMain);
+  }
+
   .btn-secondary,
   .btn-default,
   .btn-secondary:hover,
-  .btn-default:hover {
+  .btn-default:hover,
+  /* 2nd theme */
+  .btn-outline-secondary {
     border-color: transparent;
     color: var(--fgMain);
     background-color: var(--bgBtn);
@@ -128,6 +154,12 @@
   .btn-secondary:hover,
   .btn-default:hover {
     background-color: var(--bgBtnHov);
+  }
+
+  /* 2nd theme */
+  .btn.btn-icon:hover,
+  .btn.btn-icon:focus {
+    background-color: var(--bgBtn);
   }
 
   .btn-outline-secondary {
@@ -150,8 +182,17 @@
   }
 
   .dropdown-item,
+  .dropdown-item:visited,
   .form-autocomplete-suggestions li {
     color: var(--fgMain);
+  }
+
+  .dropdown-item.active,
+  .dropdown-item:active,
+  .dropdown-item[aria-current="true"],
+  .page-item.active .page-link {
+    background-color: var(--bgActive);
+    border-color: var(--bgActive);
   }
 
   .dropdown-item:hover,
@@ -198,19 +239,25 @@
   }
 
   /* Navbar */
-  .navbar-bootswatch {
+  .navbar-bootswatch,
+  /* 2nd theme */
+  #navbar.bg-white {
     transition: background-color .2s;
-    background-color: var(--bgNavBar);
+    background-color: var(--bgNavBar) !important;
   }
 
-  .navbar-bootswatch:hover {
-    background-color: var(--bgBlock);
+  .navbar-bootswatch:hover,
+  /* 2nd theme */
+  #navbar.bg-white:hover {
+    background-color: var(--bgBlock) !important;
   }
 
   .navbar-light .navbar-brand,
   .navbar-bootswatch .navbar-brand,
   .navbar-light .navbar-nav .nav-link,
-  .navbar-bootswatch .navbar-nav .nav-link {
+  .navbar-bootswatch .navbar-nav .nav-link,
+  /* 2nd theme */
+  .navbar-light .navbar-nav .nav-item .nav-link {
     color: var(--fgMain);
   }
 
@@ -249,7 +296,8 @@
     background-color: var(--bgBlock);
   }
 
-  .content-item-container:hover, .content-item-container.unread:hover {
+  .content-item-container:hover,
+  .content-item-container.unread:hover {
     background-color: var(--bgBtnHov);
   }
 
@@ -305,7 +353,7 @@
     background-color: var(--bgBtn);
   }
 
-  .message-app .dropdown-menu  {
+  .message-app .dropdown-menu {
     color: var(--fgMain);
   }
 
@@ -333,12 +381,6 @@
 
   .card-footer .progress.bg-white.border {
     background-color: var(--bgPage) !important;
-  }
-
-  /* Block ellipsis button */
-  .block .block-cards .btn.btn-link.btn-icon:hover,
-  .block .block-cards .btn.btn-link.btn-icon:focus {
-    background-color: var(--bgBtn);
   }
 
   /* Course cards on dashboard */
@@ -541,12 +583,12 @@
   }
 
   /* Checklist Progress Icon */
-  img[src='https://moodle.bulme.at/theme/image.php/classic/checklist/1604486711/icon'] {
+  img[src$='/theme/image.php/classic/checklist/1604486711/icon'] {
     filter: invert(1) hue-rotate(-180deg);
   }
 
   /* Course Progress Bar Indicator */
-  img.icon.nowicon[src='https://moodle.bulme.at/theme/image.php/classic/block_completion_progress/1604486711/right'] {
+  img.icon.nowicon[src$='/theme/image.php/classic/block_completion_progress/1604486711/right'] {
     filter: invert(1);
   }
 
@@ -567,9 +609,16 @@
     color: black;
   }
 
-  #prevpage2, #nextpage2 {
+  #prevpage2,
+  #nextpage2 {
     color: var(--fgMain);
     background-color: var(--bgBtn);
+  }
+
+  /* Discussions and Announcements */
+  .discussion .btn {
+    background: none;
+    color: var(--fgMain);
   }
 
   /* File Manager */
@@ -583,6 +632,14 @@
 
   .file-picker .ygtvfocus {
     background-color: var(--bgBlock);
+  }
+
+  .fp-pathbar > .fp-path-folder {
+    filter: invert(1);
+  }
+
+  .fp-pathbar > .fp-path-folder > * {
+    filter: invert(1);
   }
 
   .fp-iconview .fp-thumbnail {
@@ -696,26 +753,31 @@
   }
 
   .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_site,
+  .path-calendar .maincalendar .calendarmonth ul li .calendar-circle.calendar_event_site,
   .calendar_event_site {
     background-color: var(--bgCalendarEvSite);
   }
 
   .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_category,
+  .path-calendar .maincalendar .calendarmonth ul li .calendar-circle.calendar_event_category,
   .calendar_event_category {
     background-color: var(--bgCalendarEvCategory);
   }
 
   .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_course,
+  .path-calendar .maincalendar .calendarmonth ul li .calendar-circle.calendar_event_course,
   .calendar_event_course {
     background-color: var(--bgCalendarEvCourse);
   }
 
   .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_group,
+  .path-calendar .maincalendar .calendarmonth ul li .calendar-circle.calendar_event_group,
   .calendar_event_group {
     background-color: var(--bgCalendarEvGroup);
   }
 
   .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_user,
+  .path-calendar .maincalendar .calendarmonth ul li .calendar-circle.calendar_event_user,
   .calendar_event_user {
     background-color: var(--bgCalendarEvUser);
   }
@@ -760,7 +822,8 @@
   }
 
   .mceIframeContainer > iframe {
-    /*[[invertTextEditor]]*/filter: invert(1) contrast(0.8);
+    /*[[invertTextEditor]]*/
+    filter: invert(1) contrast(0.8);
   }
 
   /* Atto Text Editor */
@@ -821,6 +884,15 @@
     }
   }
 
+  /* Footer */
+  #page-footer {
+    background-color: var(--bgNavBar);
+  }
+
+  #page-footer a {
+    color: var(--fgLink);
+  }
+
   /* Misc */
   /* Timeline */
   .block-timeline .list-group-item {
@@ -864,6 +936,92 @@
 
   #region-main td[style*='background-color: #daecda;'] {
     background-color: #2b362b !important;
+  }
+
+  /******************************************************************
+  
+                    SECOND THEME ONLY
+  
+  *******************************************************************/
+  /* Navbar */
+  .navbar-light .navbar-nav .nav-item.navbar-usermenu {
+    border-left-color: var(--fgMain);
+  }
+
+  /* Site title below navbar */
+  a.site-name {
+    color: var(--fgMain);
+  }
+
+  /* Site logo below navbar */
+  #headline #platform-logo {
+    filter: invert(1) hue-rotate(195deg);
+  }
+
+  /* Sidebar */
+  [data-region="drawer"] {
+    background-color: var(--bgBlock);
+  }
+
+  /* Sidebar navigation buttons */
+  #nav-drawer .list-group-item {
+    color: var(--fgMain);
+    background-color: var(--bgBtn);
+  }
+
+  #nav-drawer .list-group-item.active {
+    background-color: var(--bgBtnHov);
+  }
+
+  /* Buttons */
+  .btn-outline-secondary:not(:disabled):not(.disabled):active,
+  .btn-outline-secondary:not(:disabled):not(.disabled).active,
+  .show > .btn-outline-secondary.dropdown-toggle {
+    border: none;
+  }
+
+  /* Icons */
+  .icon,
+  [data-region="popover-region-messages"] a.nav-link i,
+  [data-region="popover-region-messages"] a.nav-link:hover,
+  .coursesync-card a:hover:not(.dropdown-toggle):not(.popover-region-toggle) i.icon,
+  .coursesync-card a:focus:not(.dropdown-toggle):not(.popover-region-toggle) i.icon,
+  .coursesync-card .active .icon,
+  .filemanager .btn.btn-secondary > i.icon,
+  #navigation .breadcrumb_custom li:first-child::before {
+    color: /*[[fgIconOverrideColor]]*/;
+  }
+
+  img[src$="/assign/1664815159/icon"],
+  img[src$="/url/1664815159/icon"],
+  img[src$="/choice/1664815159/icon"],
+  img[src$="/feedback/1664815159/icon"],
+  img[src$="/quiz/1664815159/icon"],
+  img[src$="/core/1664815159/f/pdf-24"] {
+    filter: invert(1);
+  }
+
+  /* Table */
+  .table,
+  .generaltable,
+  .generaltable:hover {
+    color: unset;
+  }
+
+  .generaltable tbody tr:hover {
+    color: var(--fgMainHov);
+  }
+
+  /* Filter */
+  .filter-group.bg-light,
+  .filter-group .bg-white {
+    background-color: var(--bgBlock) !important;
+  }
+
+  .filter-group .btn {
+    border-color: transparent;
+    color: var(--fgMain);
+    background-color: var(--bgBtn);
   }
 }
 
