@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme verschiende Moodle Instanzen
 @namespace      dereisl
 @author         dereisl
-@version        1.0.14
+@version        1.0.15
 @homepageURL    https://github.com/dereisl/oeapp/blob/master/bulme/dark-theme/moodle_dark_theme.user.css
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -997,7 +997,14 @@ domain("tc.tugraz.at") {
   img[src$="/choice/1664815159/icon"],
   img[src$="/feedback/1664815159/icon"],
   img[src$="/quiz/1664815159/icon"],
-  img[src$="/core/1664815159/f/pdf-24"] {
+  img[src$="/choicegroup/1664815159/icon"],
+  img[src$="/folder/1664815159/icon"],
+  img[src$="/page/1664815159/icon"],
+  img[src$="/forum/1664815159/icon"],
+  img[src$="/core/1664815159/f/archive-24"],
+  img[src$="/core/1664815159/f/text-24"],
+  img[src$="/core/1664815159/f/pdf-24"],
+  img[src$="/core/1664815159/f/document-24"] {
     filter: invert(1);
   }
 
@@ -1022,6 +1029,15 @@ domain("tc.tugraz.at") {
     border-color: transparent;
     color: var(--fgMain);
     background-color: var(--bgBtn);
+  }
+
+  /* Course Accordion */
+  .accordion .card-header {
+    background: var(--bgBtn) !important;
+  }
+
+  .accordion .card-header .btn {
+    color: var(--fgMain) !important;
   }
 }
 
