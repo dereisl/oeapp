@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme verschiende Moodle Instanzen
 @namespace      dereisl
 @author         dereisl
-@version        1.0.15
+@version        1.0.16
 @homepageURL    https://github.com/dereisl/oeapp/blob/master/bulme/dark-theme/moodle_dark_theme.user.css
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -993,6 +993,7 @@ domain("tc.tugraz.at") {
   }
 
   img[src$="/assign/1664815159/icon"],
+  img[src$="/mod_assign/1664815159/icon"],
   img[src$="/url/1664815159/icon"],
   img[src$="/choice/1664815159/icon"],
   img[src$="/feedback/1664815159/icon"],
@@ -1001,11 +1002,17 @@ domain("tc.tugraz.at") {
   img[src$="/folder/1664815159/icon"],
   img[src$="/page/1664815159/icon"],
   img[src$="/forum/1664815159/icon"],
+  img[src$="/mod_forum/1664815159/icon"],
   img[src$="/core/1664815159/f/archive-24"],
   img[src$="/core/1664815159/f/text-24"],
   img[src$="/core/1664815159/f/pdf-24"],
   img[src$="/core/1664815159/f/document-24"] {
     filter: invert(1);
+  }
+
+  .drawer-toggle button #drawer-toggle-icon-open path,
+  .drawer-toggle button #drawer-toggle-icon-close path {
+    stroke: var(--fgMain) !important;
   }
 
   /* Table */
