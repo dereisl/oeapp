@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme verschiende Moodle Instanzen
 @namespace      dereisl
 @author         dereisl
-@version        1.0.16
+@version        1.1.0
 @homepageURL    https://github.com/dereisl/oeapp/blob/master/bulme/dark-theme/moodle_dark_theme.user.css
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -130,6 +130,10 @@ domain("tc.tugraz.at") {
 
   pre {
     color: var(--fgMain);
+  }
+
+  .text-dark {
+    color: var(--fgMainHov) !important;
   }
 
   /* Block ellipsis button */
@@ -310,7 +314,7 @@ domain("tc.tugraz.at") {
   }
 
   /* Messages / Chat */
-  .message-app.bg-light {
+  .message-app {
     background-color: var(--bgBlock) !important;
   }
 
@@ -336,16 +340,26 @@ domain("tc.tugraz.at") {
     background-color: var(--bgBlock) !important;
   }
 
-  .message-app .bg-secondary {
-    background-color: var(--bgMessageSent) !important;
+  .message-app .day {
+    color: var(--fgMain);
   }
 
-  .message-app .message.received .tail {
-    border-bottom-color: var(--bgPage);
+  .message-app .message.send {
+    background-color: var(--bgMessageSent) !important;
+    /* 2nd theme */
+    color: var(--fgMain);
+  }
+
+  .message-app .message.send .time {
+    color: var(--fgMainHov);
   }
 
   .message-app .message.send .tail {
     border-bottom-color: var(--bgMessageSent);
+  }
+
+  .message-app .message.received .tail {
+    border-bottom-color: var(--bgPage);
   }
 
   .message-app .btn.btn-link.btn-icon:hover,
@@ -983,7 +997,7 @@ domain("tc.tugraz.at") {
   /* Icons */
   .icon,
   [data-region="popover-region-messages"] a.nav-link i,
-  [data-region="popover-region-messages"] a.nav-link:hover,
+  [data-region="popover-region-messages"] a.nav-link i:hover,
   .coursesync-card a:hover:not(.dropdown-toggle):not(.popover-region-toggle) i.icon,
   .coursesync-card a:focus:not(.dropdown-toggle):not(.popover-region-toggle) i.icon,
   .coursesync-card .active .icon,
@@ -992,21 +1006,22 @@ domain("tc.tugraz.at") {
     color: /*[[fgIconOverrideColor]]*/;
   }
 
-  img[src$="/assign/1664815159/icon"],
-  img[src$="/mod_assign/1664815159/icon"],
-  img[src$="/url/1664815159/icon"],
-  img[src$="/choice/1664815159/icon"],
-  img[src$="/feedback/1664815159/icon"],
-  img[src$="/quiz/1664815159/icon"],
-  img[src$="/choicegroup/1664815159/icon"],
-  img[src$="/folder/1664815159/icon"],
-  img[src$="/page/1664815159/icon"],
-  img[src$="/forum/1664815159/icon"],
-  img[src$="/mod_forum/1664815159/icon"],
-  img[src$="/core/1664815159/f/archive-24"],
-  img[src$="/core/1664815159/f/text-24"],
-  img[src$="/core/1664815159/f/pdf-24"],
-  img[src$="/core/1664815159/f/document-24"] {
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/assign/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/mod_assign/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/url/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/choice/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/feedback/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/quiz/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/choicegroup/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/folder/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/page/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/forum/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/mod_forum/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/archive-24"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/text-24"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/pdf-24"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/jpeg-24"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/document-24"] {
     filter: invert(1);
   }
 
@@ -1044,6 +1059,47 @@ domain("tc.tugraz.at") {
   }
 
   .accordion .card-header .btn {
+    color: var(--fgMain) !important;
+  }
+
+  /* Search */
+  .simplesearchform .btn-submit {
+    background-color: var(--bgBtn);
+  }
+
+  /* Messages */
+  [data-region="right-hand-drawer"] button:hover,
+  [data-region="right-hand-drawer"] button:focus,
+  [data-region="message-index"] button:hover,
+  [data-region="message-index"] button:focus {
+    color: var(--fgMain);
+  }
+
+  .message-app .list-group-item-action {
+    color: var(--fgMain);
+  }
+
+  [data-region="right-hand-drawer"] a:hover:not(.dropdown-toggle):not(.popover-region-toggle) i.icon,
+  [data-region="right-hand-drawer"] a:focus:not(.dropdown-toggle):not(.popover-region-toggle) i.icon,
+  [data-region="right-hand-drawer"] .active .icon,
+  [data-region="message-index"] a:hover:not(.dropdown-toggle):not(.popover-region-toggle) i.icon,
+  [data-region="message-index"] a:focus:not(.dropdown-toggle):not(.popover-region-toggle) i.icon,
+  [data-region="message-index"] .active .icon {
+    color: var(--fgMain);
+  }
+
+  [data-region="right-hand-drawer"] [data-route="view-contacts"] i.icon:hover,
+  [data-region="right-hand-drawer"] [data-route="view-contacts"] i.icon:focus,
+  [data-region="right-hand-drawer"] [data-route="view-settings"] i.icon:hover,
+  [data-region="right-hand-drawer"] [data-route="view-settings"] i.icon:focus,
+  [data-region="right-hand-drawer"] [data-action="closedrawer"] i.icon:hover,
+  [data-region="right-hand-drawer"] [data-action="closedrawer"] i.icon:focus,
+  [data-region="message-index"] [data-route="view-contacts"] i.icon:hover,
+  [data-region="message-index"] [data-route="view-contacts"] i.icon:focus,
+  [data-region="message-index"] [data-route="view-settings"] i.icon:hover,
+  [data-region="message-index"] [data-route="view-settings"] i.icon:focus,
+  [data-region="message-index"] [data-action="closedrawer"] i.icon:hover,
+  [data-region="message-index"] [data-action="closedrawer"] i.icon:focus {
     color: var(--fgMain) !important;
   }
 }
