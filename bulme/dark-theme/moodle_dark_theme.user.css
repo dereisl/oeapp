@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme verschiende Moodle Instanzen
 @namespace      dereisl
 @author         dereisl
-@version        1.1.0
+@version        1.1.1
 @homepageURL    https://github.com/dereisl/oeapp/blob/master/bulme/dark-theme/moodle_dark_theme.user.css
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -1017,11 +1017,13 @@ domain("tc.tugraz.at") {
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/page/"][src$="/icon"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/forum/"][src$="/icon"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/mod_forum/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/scheduler/"][src$="/icon"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/archive-24"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/text-24"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/pdf-24"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/jpeg-24"],
-  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/document-24"] {
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/document-24"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/sourcecode-24"] {
     filter: invert(1);
   }
 
