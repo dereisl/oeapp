@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme verschiende Moodle Instanzen
 @namespace      dereisl
 @author         dereisl
-@version        1.1.1
+@version        1.1.2
 @homepageURL    https://github.com/dereisl/oeapp/blob/master/bulme/dark-theme/moodle_dark_theme.user.css
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -1023,7 +1023,8 @@ domain("tc.tugraz.at") {
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/pdf-24"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/jpeg-24"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/document-24"],
-  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/sourcecode-24"] {
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/sourcecode-24"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/powerpoint-24"] {
     filter: invert(1);
   }
 
