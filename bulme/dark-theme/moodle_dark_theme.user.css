@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme verschiende Moodle Instanzen
 @namespace      dereisl
 @author         dereisl
-@version        1.1.2
+@version        1.2.0
 @homepageURL    https://github.com/dereisl/oeapp/blob/master/bulme/dark-theme/moodle_dark_theme.user.css
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -426,6 +426,11 @@ domain("tc.tugraz.at") {
   #region-main {
     border-color: var(--bdMain);
     background-color: var(--bgPage);
+  }
+  
+  /* Forcefully fix text that was manually set to black */
+  li.activity.label span[style='color: rgb(0, 0, 0);'] {
+    color: var(--fgMain) !important;
   }
 
   /* Abgabestatus: abgegeben */
