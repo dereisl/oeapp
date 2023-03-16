@@ -1023,6 +1023,7 @@ domain("tc.tugraz.at") {
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/forum/"][src$="/icon"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/mod_forum/"][src$="/icon"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/scheduler/"][src$="/icon"],
+  img[src^="https://tc.tugraz.at/main/theme/image.php/tug/book/"][src$="/icon"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/archive-24"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/text-24"],
   img[src^="https://tc.tugraz.at/main/theme/image.php/tug/core/"][src$="/f/pdf-24"],
