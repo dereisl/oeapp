@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme verschiende Moodle Instanzen
 @namespace      dereisl
 @author         dereisl
-@version        1.3.0
+@version        1.4.0
 @homepageURL    https://github.com/dereisl/oeapp/blob/master/bulme/dark-theme/moodle_dark_theme.user.css
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -560,6 +560,16 @@ domain("tc.tugraz.at") {
     background-color: var(--bgAlertDanger);
   }
 
+  /* Quiz drag and drop fields */
+  .que.ddimageortext .group1,
+  form.mform fieldset#id_previewareaheader .group1 {
+    background-color: var(--bgBlock);
+  }
+
+  .que.ddwtos .group1 {
+    background-color: var(--bgBlock);
+  }
+
   /* Quiz attempts table */
   #page-mod-quiz-view table.quizattemptsummary tr.bestrow td {
     background-color: var(--bgAlertInfo);
@@ -1054,6 +1064,12 @@ domain("tc.tugraz.at") {
 
   .generaltable tbody tr:hover {
     color: var(--fgMainHov);
+  }
+
+  .table-light,
+  .table-light > th,
+  .table-light > td {
+    background-color: var(--bgBlock);
   }
 
   /* Filter */
