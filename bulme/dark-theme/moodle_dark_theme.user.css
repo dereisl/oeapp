@@ -3,7 +3,7 @@
 @description    So gut wie vollständiges Dark Theme verschiende Moodle Instanzen
 @namespace      dereisl
 @author         dereisl
-@version        1.4.0
+@version        1.4.1
 @homepageURL    https://github.com/dereisl/oeapp/blob/master/bulme/dark-theme/moodle_dark_theme.user.css
 @updateURL      https://raw.githubusercontent.com/dereisl/oeapp/master/bulme/dark-theme/moodle_dark_theme.user.css
 
@@ -356,6 +356,11 @@ domain("tc.tugraz.at") {
 
   .message-app .message.send .tail {
     border-bottom-color: var(--bgMessageSent);
+  }
+
+  .message-app .message.received {
+    background-color: var(--bgPage);
+    color: var(--fgMain);
   }
 
   .message-app .message.received .tail {
